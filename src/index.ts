@@ -19,7 +19,7 @@ export const sendUserToServer = functions.auth.user().onCreate(async (user) => {
   try {
     // Send a POST request to your server with the secret in the Authorization header
     const response = await axios.post(serverEndpoint, userData, {
-      headers: {Authorization: syncSecret},
+      headers: { Authorization: syncSecret },
     });
     console.log("Successfully sent user data to server:", response.data);
     return response.data;
@@ -52,7 +52,7 @@ export const sendUserToLocalServer = functions.auth
     try {
       // Send a POST request to your server with the secret in the Authorization header
       const response = await axios.post(serverEndpoint, userData, {
-        headers: {Authorization: syncSecret},
+        headers: { Authorization: syncSecret },
       });
       console.log("Successfully sent user data to server:", response.data);
       return response.data;
